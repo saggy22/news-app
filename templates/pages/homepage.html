@@ -1,0 +1,948 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="image/png" href="https://static.wuchna.com/static/assets/wuchna/wuchna-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="https://static.wuchna.com/static/assets/wuchna/wuchna-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://static.wuchna.com/static/assets/wuchna/wuchna-96x96.png" sizes="96x96">
+        <title>Wuchna.com: Reimagining knowledge on the web</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {"families":["Poppins:300,400,500,600,700"]},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre Baskerville">
+
+        <!---------------Comment By Me on 14-09-2018----->
+<!--
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>-->
+ <!---Comment By me on 14-09-2018------->
+<!--Added by sanjeev on 14-09-2018--->
+        <script  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<link href="https://mirrors.wuchna.com/assets/vendors.bundle.css" rel="stylesheet" type="text/css" /><!--RTL version:<link href="assets/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+	<link href="https://mirrors.wuchna.com/assets/style.bundle.css" rel="stylesheet" type="text/css" /><!--RTL version:<link href="assets/demo/demo6/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+	<link href="https://mirrors.wuchna.com/assets/cubeportfolio.css" rel="stylesheet" type="text/css" />
+	<link href="https://mirrors.wuchna.com/assets/portfolio.min.css" rel="stylesheet" type="text/css" />
+        <!--End Added by me--->
+    <style>
+      h2 {
+        font-family: 'Libre Baskerville', serif !important;
+      }
+        .m-grid--root{
+            background: #FFF;
+        }
+        #m_aside_left{
+            display: none!important;
+        }
+        #m_header_topbar {
+           display: none;
+        }
+        @media only screen and (max-width: 1024px) {
+       #m_quicksearch .m-dropdown__wrapper {
+                margin-top: -50px;
+            }
+        }
+        .cbp-l-caption-title{
+            font-size:11px;
+            line-height: 12px;
+        }
+        .cbp-l-caption-body{
+            padding: 10px!important;
+        }
+
+    </style>
+
+<style type="text/css">
+.m-dropdown.m-dropdown--arrow .m-dropdown__wrapper {padding-top: 43px !important;}.m-dropdown__wrapper{width:320px;}
+.portfolio-content.portfolio-3 .cbp-l-filters-dropdown,.portfolio-content.portfolio-4 .cbp-l-filters-alignCenter{margin-bottom:25px}.portfolio-content{padding-top:10px}.portfolio-content .cbp-caption-expand .cbp-caption-defaultWrap,.portfolio-content .cbp-caption-expand .cbp-l-caption-body,.portfolio-content .cbp-l-clients-title-block,.portfolio-content .cbp-l-filters-big .cbp-l-filters-big .cbp-filter-item,.portfolio-content .cbp-l-filters-buttonCenter .cbp-filter-counter,.portfolio-content .cbp-l-filters-buttonCenter .cbp-filter-item,.portfolio-content .cbp-l-grid-masonry-projects-desc,.portfolio-content .cbp-l-grid-masonry-projects-title,.portfolio-content .cbp-l-grid-mosaic .cbp-l-caption-desc,.portfolio-content .cbp-l-grid-mosaic .cbp-l-caption-title,.portfolio-content .cbp-l-grid-slider-team-desc,.portfolio-content .cbp-l-grid-slider-team-name,.portfolio-content .cbp-l-grid-slider-team-position,.portfolio-content .cbp-l-grid-slider-testimonials-footer,.portfolio-content .cbp-l-grid-testimonials-footer,.portfolio-content .cbp-l-grid-work-title,.portfolio-content .cbp-l-slider-title-block div,.portfolio-content .cbp-l-testimonials-title-block{font-family:"Open Sans",sans-serif!important}.portfolio-content .text-center{text-align:center}.portfolio-content .cbp-l-project-related-link:hover{text-decoration:none}.portfolio-content .cbp-l-filters-button .cbp-filter-counter,.portfolio-content .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active{background-color:#2F353B;border-color:#2F353B;color:#fff}.portfolio-content .cbp-l-filters-button .cbp-filter-counter:before,.portfolio-content .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active:before{border-top-color:#2F353B}.portfolio-content .cbp-l-project-desc-title span,.portfolio-content .cbp-l-project-details-title span{border-bottom-color:#e7505a;text-transform:uppercase;font-weight:600}.portfolio-content.portfolio-2 .cbp-l-filters-button .cbp-filter-counter,.portfolio-content.portfolio-2 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active{background-color:#32C5D2;border-color:#32C5D2;color:#fff}.portfolio-content.portfolio-2 .cbp-l-filters-button .cbp-filter-counter:before,.portfolio-content.portfolio-2 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active:before{border-top-color:#32C5D2}.portfolio-content.portfolio-2 .cbp-l-grid-mosaic .cbp-caption-activeWrap{background-color:rgba(50,197,210,.9)}.portfolio-content.portfolio-2 .cbp-l-grid-mosaic .cbp-caption-activeWrap .cbp-l-caption-desc,.portfolio-content.portfolio-2 .cbp-l-grid-mosaic .cbp-caption-activeWrap .cbp-l-caption-title{color:#fff}.portfolio-content.portfolio-3 .cbp-l-filters-button .cbp-filter-counter,.portfolio-content.portfolio-3 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active{background-color:#3598DC;border-color:#3598DC;color:#fff}.portfolio-content.portfolio-3 .cbp-caption-zoom .cbp-caption-activeWrap,.portfolio-content.portfolio-4 .cbp-caption-zoom .cbp-caption-activeWrap{background-color:rgba(0,0,0,.7)}.portfolio-content.portfolio-3 .cbp-l-filters-button .cbp-filter-counter:before,.portfolio-content.portfolio-3 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active:before{border-top-color:#3598DC}.portfolio-content.portfolio-3 .cbp-l-project-desc-title span,.portfolio-content.portfolio-3 .cbp-l-project-details-title span{border-bottom-color:#3598DC}.portfolio-content.portfolio-4 .cbp-l-filters-alignCenter .cbp-filter-item{margin-bottom:0}.portfolio-content .cbp-l-filters-dropdown-floated{margin-top:0}.portfolio-content .cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownHeader,.portfolio-content .cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList .cbp-filter-item{line-height:31px}.portfolio-content .cbp-popup-singlePage .cbp-popup-content{max-width:1170px}.portfolio-content .cbp-l-filters-button{margin-bottom:25px}.portfolio-content .cbp-l-loadMore-button{margin-bottom:60px}.portfolio-content .btn{padding:6px 12px}.cbp-popup-singlePage-open,.cbp-popup-wrap{z-index:10105!important}.cbp-popup-singlePage .cbp-popup-navigation-wrap{z-index:10106!important}.portfolio-tile{margin-bottom:30px}.cbp-l-filters-dropdownWrap{background:0 0;border:1px solid #2F353B}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownHeader{color:#2F353B;font-size:12px}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownHeader:after{border-color:#2F353B transparent}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList{background:#fff}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList .cbp-filter-item{font-size:12px;color:#2F353B;border:0}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList .cbp-filter-item:hover{background:#f3f4f5}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList .cbp-filter-item.cbp-filter-item-active{background:#e5e8ea}
+
+@media only screen and (min-width: 1025px){
+.m-header-search.m-header-search--expandable .m-header-search__input {
+    -webkit-transition: width .4s ease-out;
+    transition: width .4s ease-out;
+    width: 300px !important;
+}
+}
+
+@media only screen and (max-width: 576px){
+.m-header-search__icon-search{width:96px !important;}
+}
+
+
+
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124058811-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124058811-1');
+</script>
+
+<!-- <link href="https://static.wuchna.com/static/assets/old/assets/global/plugins/cubeportfolio/css/cubeportfolio.css" rel="stylesheet" type="text/css" />
+	<link href="https://static.wuchna.com/static/assets/old/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://static.wuchna.com/static/assets/old/assets/pages/css/portfolio.min.css" rel="stylesheet" type="text/css" /> -->
+<meta name="google-site-verification" content="EoYkw6DUNhkCJRzG7h_m0pUUVcWcFHFv_lDtBqbn4wA" />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3814238051086356",
+    enable_page_level_ads: true
+  });
+</script>
+    </head>
+    <body class="m-header-search--mobile-expanded">
+        <div class="container">
+            <span class="text-md-center">
+                <br/><br/>
+                <center><img src="https://static.wuchna.com/static/assets/wuchna/wuchna-home.png" alt="Welcome to Wuchna.com" class="img-responsive mt-4 mb-6 mx-auto" width="300"></center>
+                <br/><br/><h2>Please enter your search below, and select from the suggestions.</h2><br/>
+                <!-- <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general"> -->
+<center>
+                <div class="col-md-offset-3 col-md-8">
+
+                            <div class="m-stack__item m-stack__item--middle m-dropdown m-dropdown--arrow m-dropdown--large m-dropdown--mobile-full-width m-dropdown--align-right m-dropdown--skin-light m-header-search m-header-search--expandable m-header-search--skin-light" id="m_quicksearch" m-quicksearch-mode="default">
+    <!--BEGIN: Search Form -->
+    <form class="m-header-search__form" style="text-align: center;padding-top: 5px;background: linear-gradient( to right, rgba(244, 81, 108, 1) 0%, rgba(255, 184, 34,1) 12%, rgba(52, 191, 163, 1) 47%, rgba(0, 197, 220, 1) 100% ) left top #777 no-repeat;border-radius: 20px;padding-bottom: 1px;padding-left: 1px;padding-right: 1px;padding-top: 1px;">
+        <div class="m-header-search__wrapper" style="background:#fff">
+            <span class="m-header-search__icon-search" id="m_quicksearch_search">
+                <i class="fa fa-search"></i>
+            </span>
+            <span class="m-header-search__input-wrapper">
+                <input autocomplete="off" type="text" name="q" class="m-header-search__input typeahead tt-query" value="" placeholder="Search here ..." id="m_quicksearch_input">
+            </span>
+            <span class="m-header-search__icon-close" id="m_quicksearch_close">
+                <i class="la la-remove"></i>
+            </span>
+            <span class="m-header-search__icon-cancel" id="m_quicksearch_cancel">
+                <i class="la la-remove"></i>
+            </span>
+        </div>
+    </form>
+                                <!--END: Search Form -->
+                                <!--BEGIN: Search Results -->
+                                <div class="m-dropdown__wrapper">
+                                    <div class="m-dropdown__arrow m-dropdown__arrow--center"></div>
+                                    <div class="m-dropdown__inner">
+                                        <div class="m-dropdown__body">
+                                            <div class="m-dropdown__scrollable m-scrollable" data-scrollable="true"  data-height="300" data-mobile-height="200">
+                                                <div class="m-dropdown__content m-list-search m-list-search--skin-light">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--BEGIN: END Results -->
+                            </div>
+
+                        <!-- </div> -->
+                        <!-- END: Topbar -->
+                 <!-- <div class="bs">
+                    <input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false" id="my_quicksearch_input">
+                </div> -->
+
+
+
+                </div>
+                </center>
+            </span>
+
+<!-- <div style="position:absolute; bottom:0;right:0">
+	<a style="float:right; margin-right:30px" href="https://wuchna.com/static/sitemap-v1-2.xml">Sitemap</a>
+	<a style="float:right; margin-right:30px" href="https://wuchna.com/about">About</a>
+</div>
+ -->        </div>
+     <div class="row" style="margin:0px">
+    <div class="col-xs-12 col-sm-12" style="padding: 0px">
+        <div class="m-portlet__body  m-portlet__body--no-padding">
+            <div class="m-portlet__body  m-portlet__body--no-padding">
+                <div class="row m-row--no-padding m-row--col-separator-xl">
+                    <div class="col-xl-12">
+                        <div class="portfolio-content portfolio-3">
+                            <div class="clearfix">
+                                <div id="js-filters-lightbox-gallery1" class="cbp-l-filters-dropdown cbp-l-filters-dropdown-floated">
+                            <!--         <div class="cbp-l-filters-dropdownWrap border-grey-salsa">
+                                        <div class="cbp-l-filters-dropdownHeader uppercase">Sort Gallery</div>
+                                        <div class="cbp-l-filters-dropdownList">
+                                            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item uppercase"> All (
+                                                <div class="cbp-filter-counter"></div> items)
+                                            </div>
+                                            <div data-filter=".identity" class="cbp-filter-item uppercase"> Identity (
+                                                <div class="cbp-filter-counter"></div> items)
+                                            </div>
+                                            <div data-filter=".web-design" class="cbp-filter-item uppercase"> Web Design (
+                                                <div class="cbp-filter-counter"></div> items)
+                                            </div>
+                                            <div data-filter=".print" class="cbp-filter-item uppercase"> Print (
+                                                <div class="cbp-filter-counter"></div> items)
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div id="js-filters-lightbox-gallery2" class="cbp-l-filters-button cbp-l-filters-left">
+
+                                    <div data-filter=".History" class="cbp-filter-item btn blue btn-outline">History</div>
+                                    <div data-filter=".Personalities" class="cbp-filter-item btn blue btn-outline">Personalities</div>
+                                    <div data-filter=".Bollywood" class="cbp-filter-item btn blue btn-outline">Bollywood</div>
+                                    <div data-filter=".Sciences" class="cbp-filter-item btn blue btn-outline">Sciences</div>
+                                    <div data-filter=".Society" class="cbp-filter-item btn blue btn-outline">Society</div>
+                                    <div data-filter=".Hollywood" class="cbp-filter-item btn blue btn-outline">Hollywood</div>
+                                    <div data-filter=".Politics" class="cbp-filter-item btn blue btn-outline">Politics</div>
+                                    <div data-filter=".Places" class="cbp-filter-item btn blue btn-outline">Places</div>
+                                     <div data-filter="*" class="cbp-filter-item-active cbp-filter-item btn blue btn-outline">All</div>
+                                </div>
+                            </div>
+                            <div id="js-grid-lightbox-gallery" class="cbp ">
+                                <div class="cbp-item History Events">
+                                    <a href="https://wuchna.com/p/1858-bradford-sweets-poisoning" class="cbp-caption " data-title="1858 Bradford Sweets Poisoning">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/1858-bradford-sweets-poisoning__787f2827-3002-4864-8c28-29a1a47a9ce4.jpg" alt="1858 Bradford Sweets Poisoning">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">1858 Bradford Sweets Poisoning<br>History, Events</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Events Wars">
+                                    <a href="https://wuchna.com/p/1998-united-states-embassy-bombings" class="cbp-caption " data-title="1998 United States Embassy Bombings">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/1998-united-states-embassy-bombings__a5b9d903-77e5-4ab7-a65c-7b40e7eab279.jpg" alt="1998 United States Embassy Bombings">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">1998 United States Embassy Bombings<br>Events, Wars</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Disasters Events">
+                                    <a href="https://wuchna.com/p/2010-chile-earthquake" class="cbp-caption " data-title="2010 Chile Earthquake">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/2010-chile-earthquake__9899876b-1650-4c90-9885-1b30cfed5b23.jpg" alt="2010 Chile Earthquake">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">2010 Chile Earthquake<br>Disasters, Events</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/aamir-khan" class="cbp-caption " data-title="Aamir Khan">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/aamir-khan__9af83644-ee9c-477a-84d5-612d7eb31e23.jpg" alt="Aamir Khan">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Aamir Khan<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/abhay-deol" class="cbp-caption " data-title="Abhay Deol">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/abhay-deol__283c172f-13e1-42ea-9bd2-58ea4150b101.jpg" alt="Abhay Deol">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Abhay Deol<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/abhishek-bachchan" class="cbp-caption " data-title="Abhishek Bachchan">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/abhishek-bachchan__b278022c-c735-461b-984d-4ec0741768ce.jpg" alt="Abhishek Bachchan">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Abhishek Bachchan<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Sciences">
+                                    <a href="https://wuchna.com/p/ada-yonath" class="cbp-caption " data-title="Ada Yonath">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/ada-yonath__82115a15-eac0-48c1-a0f6-1d8e658f5b32.jpg" alt="Ada Yonath">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Ada Yonath<br>Personalities, Sciences</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/adam-sandler" class="cbp-caption " data-title="Adam Sandler">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/adam-sandler__9af8703d-19ba-424d-8956-c8e53a75602a.jpg" alt="Adam Sandler">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Adam Sandler<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/aditya-roy-kapur" class="cbp-caption " data-title="Aditya Roy Kapur">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/aditya-roy-kapur__34546ede-f984-4104-8922-ec0333357516.jpg" alt="Aditya Roy Kapur">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Aditya Roy Kapur<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Politics Organization">
+                                    <a href="https://wuchna.com/p/african-union" class="cbp-caption " data-title="African Union">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/african-union__6d434eaa-91af-4b25-85fe-04834c2d005b.jpg" alt="African Union">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">African Union<br>Politics, Organization</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/aftab-shivdasani" class="cbp-caption " data-title="Aftab Shivdasani">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/aftab-shivdasani__ea07fa43-e0b9-4222-a66d-554c395b6200.jpg" alt="Aftab Shivdasani">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Aftab Shivdasani<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Anatomy Immunity">
+                                    <a href="https://wuchna.com/p/agranulocyte" class="cbp-caption " data-title="Agranulocyte">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/agranulocyte__1ecf74c6-0ca7-46c7-b858-5941ce99769e.jpg" alt="Agranulocyte">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Agranulocyte<br>Anatomy, Immunity</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/aishwarya-rai" class="cbp-caption " data-title="Aishwarya Rai">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/aishwarya-rai__fdfc4880-ba1a-4cd3-9043-24d1c9880a3f.jpg" alt="Aishwarya Rai">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Aishwarya Rai<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/ajay-devgn" class="cbp-caption " data-title="Ajay Devgn">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/ajay-devgn__38e06667-dc33-494f-947f-d56f47689222.jpg" alt="Ajay Devgn">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Ajay Devgn<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/akshay-kumar" class="cbp-caption " data-title="Akshay Kumar">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/akshay-kumar__1988d0f4-e081-4ff9-b51d-e142273c4b35.jpg" alt="Akshay Kumar">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Akshay Kumar<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/akshaye-khanna" class="cbp-caption " data-title="Akshaye Khanna">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/akshaye-khanna__f291cc0c-b8ff-4f8b-a9df-819f6f7bd5bf.jpg" alt="Akshaye Khanna">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Akshaye Khanna<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/al-pacino" class="cbp-caption " data-title="Al Pacino">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/al-pacino__5594981a-9a18-413d-afda-6c727da244d4.jpg" alt="Al Pacino">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Al Pacino<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/alexandra-daddario" class="cbp-caption " data-title="Alexandra Daddario">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/alexandra-daddario__7771e9ae-6223-48fd-b56e-977433832df1.jpg" alt="Alexandra Daddario">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Alexandra Daddario<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/alia-bhatt" class="cbp-caption " data-title="Alia Bhatt">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/alia-bhatt__e3b353d1-e176-4b74-a281-8a3d785f49a9.jpg" alt="Alia Bhatt">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Alia Bhatt<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/allu-arjun" class="cbp-caption " data-title="Allu Arjun">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/allu-arjun__8d6a969c-71c9-45e8-acfa-72333a339b89.jpg" alt="Allu Arjun">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Allu Arjun<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/amber-heard" class="cbp-caption " data-title="Amber Heard">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/amber-heard__6bfa59da-f476-41bc-b431-8f1ff3abbd44.jpg" alt="Amber Heard">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Amber Heard<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Author">
+                                    <a href="https://wuchna.com/p/amish-tripathi" class="cbp-caption " data-title="Amish Tripathi">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/amish-tripathi__7bdfb39e-41ec-46fc-9020-bc1c734a3df9.jpg" alt="Amish Tripathi">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Amish Tripathi<br>Personalities, Author</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/amitabh-bachchan" class="cbp-caption " data-title="Amitabh Bachchan">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/amitabh-bachchan__172a791e-83ff-40d8-a232-6b74c6ffcab2.jpg" alt="Amitabh Bachchan">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Amitabh Bachchan<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/amy-adams" class="cbp-caption " data-title="Amy Adams">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/amy-adams__672eff68-ee93-4a02-9410-c291e924dc93.jpg" alt="Amy Adams">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Amy Adams<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/amy-jackson" class="cbp-caption " data-title="Amy Jackson">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/amy-jackson__fa152d6b-3750-43e8-ad84-f867770a79da.jpg" alt="Amy Jackson">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Amy Jackson<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Society Sexuality">
+                                    <a href="https://wuchna.com/p/androgyny" class="cbp-caption " data-title="Androgyny">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/androgyny__252e1f33-32f1-4d0a-a867-0dd1944bb33f.jpg" alt="Androgyny">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Androgyny<br>Society, Sexuality</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/angelina-jolie" class="cbp-caption " data-title="Angelina Jolie">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/angelina-jolie__02d51937-158e-4da7-8a44-66c216101355.jpg" alt="Angelina Jolie">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Angelina Jolie<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/anil-kapoor" class="cbp-caption " data-title="Anil Kapoor">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/anil-kapoor__f37324e7-097c-4287-a54f-98cdc8cc047e.jpg" alt="Anil Kapoor">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Anil Kapoor<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Sports">
+                                    <a href="https://wuchna.com/p/anirban-lahiri" class="cbp-caption " data-title="Anirban Lahiri">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/anirban-lahiri__ba8309fe-5c5f-4fac-94c0-6f9fe67e94c0.jpg" alt="Anirban Lahiri">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Anirban Lahiri<br>Personalities, Sports</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/anurag-basu" class="cbp-caption " data-title="Anurag Basu">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/anurag-basu__3f0f59d5-cfdb-44ab-b204-dabe9e60fccf.jpg" alt="Anurag Basu">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Anurag Basu<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/anushka-sharma" class="cbp-caption " data-title="Anushka Sharma">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/anushka-sharma__e0e5ced8-ec3d-463f-9d3b-51f5e1bf865e.jpg" alt="Anushka Sharma">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Anushka Sharma<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Housing Space">
+                                    <a href="https://wuchna.com/p/apartment" class="cbp-caption " data-title="Apartment">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/apartment__9b0b98cc-fe58-4914-84aa-77f715c1e230.jpg" alt="Apartment">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Apartment<br>Housing, Space</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/arbaaz-khan" class="cbp-caption " data-title="Arbaaz Khan">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/arbaaz-khan__f440a3cb-1df2-4093-a611-60c6d929bd91.jpg" alt="Arbaaz Khan">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Arbaaz Khan<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/arijit-singh" class="cbp-caption " data-title="Arijit Singh">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/arijit-singh__2b9a321a-2e92-478d-9ff9-f3760543d434.jpg" alt="Arijit Singh">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Arijit Singh<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Philosophy">
+                                    <a href="https://wuchna.com/p/aristotle" class="cbp-caption " data-title="Aristotle">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/aristotle__3a46e6f1-a43b-4a8b-9d11-55cf2316a4b1.jpg" alt="Aristotle">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Aristotle<br>Personalities, Philosophy</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/arjun-kapoor" class="cbp-caption " data-title="Arjun Kapoor">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/arjun-kapoor__e8cfc526-a16e-4158-a636-a7f266f60553.jpg" alt="Arjun Kapoor">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Arjun Kapoor<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/arjun-rampal" class="cbp-caption " data-title="Arjun Rampal">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/arjun-rampal__ded9c6ca-5e39-43f7-8e93-fb9654571372.jpg" alt="Arjun Rampal">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Arjun Rampal<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/arshad-warsi" class="cbp-caption " data-title="Arshad Warsi">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/arshad-warsi__3acffb10-266e-455c-9146-972ad1f08428.jpg" alt="Arshad Warsi">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Arshad Warsi<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/ashton-kutcher" class="cbp-caption " data-title="Ashton Kutcher">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/ashton-kutcher__781453e0-b890-4fb3-a982-a50d5b8a8d55.jpg" alt="Ashton Kutcher">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Ashton Kutcher<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Politics">
+                                    <a href="https://wuchna.com/p/atal-bihari-vajpayee" class="cbp-caption " data-title="Atal Bihari Vajpayee">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/atal-bihari-vajpayee__14960638-1d67-4654-a4a5-24fe244d3a69.jpg" alt="Atal Bihari Vajpayee">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Atal Bihari Vajpayee<br>Personalities, Politics</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/audrey-hepburn" class="cbp-caption " data-title="Audrey Hepburn">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/audrey-hepburn__800ab0c1-4e46-43e7-873f-117362df309c.jpg" alt="Audrey Hepburn">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Audrey Hepburn<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Languanges Regional">
+                                    <a href="https://wuchna.com/p/avoiuli" class="cbp-caption " data-title="Avoiuli">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/avoiuli__25ca4374-49d8-4fc9-b927-306b7ac6ebc9.jpg" alt="Avoiuli">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Avoiuli<br>Languanges, Regional</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Places Malaysia">
+                                    <a href="https://wuchna.com/p/ayer-keroh" class="cbp-caption " data-title="Ayer Keroh">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/ayer-keroh__807dc77f-2a69-406e-b951-c7a2fdaf0908.jpg" alt="Ayer Keroh">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Ayer Keroh<br>Places, Malaysia</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/ayushmann-khurrana" class="cbp-caption " data-title="Ayushmann Khurrana">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/ayushmann-khurrana__c952ba66-5d87-49a7-a1b0-7ff0803b6a52.jpg" alt="Ayushmann Khurrana">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Ayushmann Khurrana<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Places Spain">
+                                    <a href="https://wuchna.com/p/barcelona" class="cbp-caption " data-title="Barcelona">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/barcelona__07310c45-33fc-4297-ba55-1574cdeb9388.jpg" alt="Barcelona">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Barcelona<br>Places, Spain</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Geography India">
+                                    <a href="https://wuchna.com/p/bay-of-bengal" class="cbp-caption " data-title="Bay Of Bengal">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/bay-of-bengal__0f87ed1f-27b3-4624-ab57-cceb5f168293.jpg" alt="Bay Of Bengal">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Bay Of Bengal<br>Geography, India</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Hollywood">
+                                    <a href="https://wuchna.com/p/ben-affleck" class="cbp-caption " data-title="Ben Affleck">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/ben-affleck__f603dfd9-a155-4306-905c-770487260046.jpg" alt="Ben Affleck">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Ben Affleck<br>Personalities, Hollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Economist">
+                                    <a href="https://wuchna.com/p/benegal-rama-rau" class="cbp-caption " data-title="Benegal Rama Rau">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/benegal-rama-rau__09c8b5bb-8f90-48b0-8f19-d9797100ab42.jpg" alt="Benegal Rama Rau">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Benegal Rama Rau<br>Personalities, Economist</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Society Regional">
+                                    <a href="https://wuchna.com/p/berbers" class="cbp-caption " data-title="Berbers">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/berbers__77f0b6e5-c167-49e9-ba4d-6ffd9e112333.jpg" alt="Berbers">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Berbers<br>Society, Regional</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div><div class="cbp-item Personalities Bollywood">
+                                    <a href="https://wuchna.com/p/bharti-singh" class="cbp-caption " data-title="Bharti Singh">
+                                          <div class="cbp-caption-defaultWrap">
+                                            <img src="https://static.wuchna.com/static/wiki/bharti-singh__eefa7d3f-44ac-4f8c-bfdb-cb871e610c04.jpg" alt="Bharti Singh">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignLeft">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-title">Bharti Singh<br>Personalities, Bollywood</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+</div>
+                        <div id="js-loadMore-lightbox-gallery" class="cbp-l-loadMore-button">
+                                <a href="javascript:;" class="cbp-l-loadMore-link btn grey-mint btn-outline btn btn-danger" rel="nofollow">
+																									<span class="cbp-l-loadMore-defaultText">LOAD MORE</span>
+																									<span class="cbp-l-loadMore-loadingText">LOADING...</span>
+																									<span class="cbp-l-loadMore-noMoreLoading">NO MORE WORKS</span>
+																								</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- <script>
+var input = document.getElementById("my_quicksearch_input");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        window.location.href = 'https://wuchna.com/p/'+input.value;
+    }
+});
+</script>
+ -->
+ <!-- <script src="https://static.wuchna.com/static/assets/old/assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js" type="text/javascript"></script>
+<script src="https://static.wuchna.com/static/assets/old/assets/pages/scripts/portfolio-4.min.js" type="text/javascript"></script> -->
+        <!--Comment By Me on 14-09-2018-->
+<!--<script async src="https://mirrors.wuchna.com/wuchnamirror/vendors.bundle.js" type="text/javascript"></script>
+<script async src="https://mirrors.wuchna.com/wuchnamirror/scripts.bundle.js" type="text/javascript"></script>-->
+<!--Comment by me on 14-09-2018
+--->
+
+    <!--Added By sanjeev on 14-09-2019--->
+<!--        <script src="https://mirrors.wuchna.com/wuchnamirror/vendors.bundle.js" type="text/javascript"></script>-->
+<script src="https://mirrors.wuchna.com/wuchnamirror/vendors.bundle.js" type="text/javascript"></script>
+        <script async src="https://mirrors2.wuchna.com/homepics/scripts.bundle.js" type="text/javascript"></script>
+        <script src="https://mirrors.wuchna.com/assets/jquery.cubeportfolio.js" type="text/javascript"></script>
+<script src="https://mirrors.wuchna.com/assets/portfolio-3.min.js" type="text/javascript"></script>
+          <script>
+            jQuery(document).ready(function() {
+                  jQuery("#js-grid-lightbox-gallery").cubeportfolio('destroy');
+               jQuery("#js-grid-lightbox-gallery").cubeportfolio({
+                    filters: '#js-filters-lightbox-gallery2',
+                    caption:'minimal',
+                   loadMoreAction:'click',
+                   loadMore:'Load More',
+                   displayType:"lazyLoading",
+                    mediaQueries:[{width:1100,cols:10},{width:480,cols:3},{width:320,cols:2}]
+                });
+//
+                var click=1;
+                jQuery(".cbp-l-loadMore-link").click(function () {
+                        $(".cbp-l-loadMore-loadingText").show(100);
+                        $.ajax({
+                            url: 'https://mirrors.wuchna.com/wuchnamirror/ajax.php?pg='+click,
+                            type: 'GET'
+                        })
+                        .done(function(data) {
+                            $(".cbp-l-loadMore-loadingText").hide(100);
+                             jQuery("#js-grid-lightbox-gallery").cubeportfolio('appendItems',data);
+                        });
+                        click++;
+
+                });
+    jQuery("#js-grid-lightbox-gallery").on('initComplete.cbp', function() {
+
+    });
+            });
+        </script>
+<!--<script	  src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>-->
+<script src="https://mirrors.wuchna.com/wuchnamirror/lazy.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            $(document).on("click",".hover-effect,.btn-video-play,.description-btn,.caption-btn",function () {
+                setTimeout(function () {
+                $(".modal-backdrop").remove();
+                },500);
+            });
+
+
+        </script>
+
+<!--End Added By sanjeev-->
+    </body>
+</html>
+

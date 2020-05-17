@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="{{m.lang}}" >
+<!-- begin::Head -->
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8" />
+	<title>{{m.page_meta.meta_title}}</title>
+	<meta name="description" content="{{m.page_meta.meta_dscr}}">
+	<meta name="keywords" content="{% for meta_k in m.page_meta.meta_keywords%}{{meta_k}}{% if not forloop.last %},{% endif %}{% endfor %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+	<meta property="og:title" content="{{m.page_meta.meta_title}}" />
+	<meta property="og:type" content="website" />
+	{% for witem in m.images %}{% if forloop.counter == 1 %}<meta property="og:image" content="{{witem.wcontent | safe | default_if_none:""}}"/>{% endif %}{% endfor %}
+	<meta property="og:url" content="https://wuchna.com/p/{{m.url}}" />
+	<meta property="og:description" content="{{m.page_meta.meta_dscr}}" />
+	<link rel="icon shortcut" type="image/png" href="https://mirrors.wuchna.com/wuchnamirror/wuchna-16x16.png" sizes="16x16">
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+	WebFont.load({
+		google: {"families":["Poppins:300,400,500,600,700"]},
+		active: function() {
+			sessionStorage.fonts = true;
+		}
+	});
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<!--begin::Base Styles -->
+<link href="https://mirrors.wuchna.com/wuchnamirror/style.bundle.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link href="https://mirrors.wuchna.com/wuchnamirror/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
+<style>
+@charset "UTF-8";.modal-open.page-overflow .modal-scrollable,.modal-open.page-overflow .page-container,.modal-open.page-overflow .page-container .navbar-fixed-bottom,.modal-open.page-overflow .page-container .navbar-fixed-top{overflow-y:auto!important}.modal-scrollable{overflow:hidden!important;z-index:10051;overflow-y:scroll!important}.modal-backdrop{position:fixed;bottom:0}
+
+.lead{font-weight: 400;margin-bottom: 30px;}.lh{margin-top:-40px;width:200px; margin-left:4px;}#feed{padding:5px}#feed a {text-decoration:none; color:#000}.cbp-l-filters-dropdown{margin-right:40px;}.cbp-l-filters-button{margin-left:40px;}.cbp-l-filters-dropdownWrap{background: #fff;}.m-portlet.m-portlet--skin-dark {box-shadow: none; -webkit-box-shadow:none;}.m-subheader .m-subheader__title {margin:0}.portfolio-content.portfolio-3 .cbp-l-filters-dropdown,.portfolio-content.portfolio-4 .cbp-l-filters-alignCenter{margin-bottom:25px}.portfolio-content{padding-top:10px}.portfolio-content .cbp-caption-expand .cbp-caption-defaultWrap,.portfolio-content .cbp-caption-expand .cbp-l-caption-body,.portfolio-content .cbp-l-clients-title-block,.portfolio-content .cbp-l-filters-big .cbp-l-filters-big .cbp-filter-item,.portfolio-content .cbp-l-filters-buttonCenter .cbp-filter-counter,.portfolio-content .cbp-l-filters-buttonCenter .cbp-filter-item,.portfolio-content .cbp-l-grid-masonry-projects-desc,.portfolio-content .cbp-l-grid-masonry-projects-title,.portfolio-content .cbp-l-grid-mosaic .cbp-l-caption-desc,.portfolio-content .cbp-l-grid-mosaic .cbp-l-caption-title,.portfolio-content .cbp-l-grid-slider-team-desc,.portfolio-content .cbp-l-grid-slider-team-name,.portfolio-content .cbp-l-grid-slider-team-position,.portfolio-content .cbp-l-grid-slider-testimonials-footer,.portfolio-content .cbp-l-grid-testimonials-footer,.portfolio-content .cbp-l-grid-work-title,.portfolio-content .cbp-l-slider-title-block div,.portfolio-content .cbp-l-testimonials-title-block{font-family:"Open Sans",sans-serif!important}.portfolio-content .text-center{text-align:center}.portfolio-content .cbp-l-project-related-link:hover{text-decoration:none}.portfolio-content .cbp-l-filters-button .cbp-filter-counter,.portfolio-content .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active{background-color:#2F353B;border-color:#2F353B;color:#fff}.portfolio-content .cbp-l-filters-button .cbp-filter-counter:before,.portfolio-content .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active:before{border-top-color:#2F353B}.portfolio-content .cbp-l-project-desc-title span,.portfolio-content .cbp-l-project-details-title span{border-bottom-color:#e7505a;text-transform:uppercase;font-weight:600}.portfolio-content.portfolio-2 .cbp-l-filters-button .cbp-filter-counter,.portfolio-content.portfolio-2 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active{background-color:#32C5D2;border-color:#32C5D2;color:#fff}.portfolio-content.portfolio-2 .cbp-l-filters-button .cbp-filter-counter:before,.portfolio-content.portfolio-2 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active:before{border-top-color:#32C5D2}.portfolio-content.portfolio-2 .cbp-l-grid-mosaic .cbp-caption-activeWrap{background-color:rgba(50,197,210,.9)}.portfolio-content.portfolio-2 .cbp-l-grid-mosaic .cbp-caption-activeWrap .cbp-l-caption-desc,.portfolio-content.portfolio-2 .cbp-l-grid-mosaic .cbp-caption-activeWrap .cbp-l-caption-title{color:#fff}.portfolio-content.portfolio-3 .cbp-l-filters-button .cbp-filter-counter,.portfolio-content.portfolio-3 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active{background-color:#3598DC;border-color:#3598DC;color:#fff}.portfolio-content.portfolio-3 .cbp-caption-zoom .cbp-caption-activeWrap,.portfolio-content.portfolio-4 .cbp-caption-zoom .cbp-caption-activeWrap{background-color:rgba(0,0,0,.7)}.portfolio-content.portfolio-3 .cbp-l-filters-button .cbp-filter-counter:before,.portfolio-content.portfolio-3 .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active:before{border-top-color:#3598DC}.portfolio-content.portfolio-3 .cbp-l-project-desc-title span,.portfolio-content.portfolio-3 .cbp-l-project-details-title span{border-bottom-color:#3598DC}.portfolio-content.portfolio-4 .cbp-l-filters-alignCenter .cbp-filter-item{margin-bottom:0}.portfolio-content .cbp-l-filters-dropdown-floated{margin-top:0}.portfolio-content .cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownHeader,.portfolio-content .cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList .cbp-filter-item{line-height:31px}.portfolio-content .cbp-popup-singlePage .cbp-popup-content{max-width:1170px}.portfolio-content .cbp-l-filters-button{margin-bottom:25px}.portfolio-content .cbp-l-loadMore-button{margin-bottom:60px}.portfolio-content .btn{padding:6px 12px}.cbp-popup-singlePage-open,.cbp-popup-wrap{z-index:10105!important}.cbp-popup-singlePage .cbp-popup-navigation-wrap{z-index:10106!important}.portfolio-tile{margin-bottom:30px}.cbp-l-filters-dropdownWrap{background:0 0;border:1px solid #2F353B}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownHeader{color:#2F353B;font-size:12px}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownHeader:after{border-color:#2F353B transparent}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList{background:#fff}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList .cbp-filter-item{font-size:12px;color:#2F353B;border:0}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList .cbp-filter-item:hover{background:#f3f4f5}.cbp-l-filters-dropdownWrap .cbp-l-filters-dropdownList .cbp-filter-item.cbp-filter-item-active{background:#e5e8ea}
+
+
+/*.tt-hint {color: #999999;}.tt-menu {background-color: #FFFFFF;border: 1px solid rgba(0, 0, 0, 0.2);border-radius: 8px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);margin-top: 12px;padding: 8px 0;width: 222px;}.tt-suggestion {font-size: 12px; padding: 3px 20px;}.tt-suggestion:hover {cursor: pointer;background-color: #0097CF;color: #000;}.tt-suggestion p {margin: 0;}
+*/
+@media only screen and (max-width: 500px) {.nav-stick-side {display:block!important;}.m-aside-left--fixed.m-aside-left--minimize .m-body {padding-left: 0px!important;}}@media only screen and (max-width:576px){.m-content{margin-top:-50px !important;}}.nav-stick-side{display:none;}html body {font-size:1em!important;}.m-portlet .m-portlet__head{height:3.8rem!important;}.m-subheader {padding: 15px 30px 0 30px;}.hover-effect:hover .hover-able-img{opacity: 0.3;}.hover-effect:hover .middle {opacity: 1;}.hover-effect:hover{cursor: pointer;}.hover-able-img {opacity: 1;display: block;transition: .5s ease;backface-visibility: hidden;}.middle {transition: .5s ease;opacity: 0;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);text-align: center;}.videoWrapper {position: relative;padding-bottom: 56.25%; padding-top: 25px;height: 0;}.videoWrapper iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}#section2 p {margin-bottom: 5px;}.m-portlet{margin-bottom: 1.0rem;}.timeline-Widget--edge{border-radius: 0px !important;}.timeline-Widget{border-radius: 0px !important;}
+
+.tt-hint,.urls {border: 2px solid #CCCCCC;border-radius: 8px 8px 8px 8px;font-size: 12px;height: 45px;}
+
+        .tt-dropdown-menu {
+            width: 400px;
+            margin-top: 5px;
+            padding: 8px 12px;
+            background-color: #000;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px 8px 8px 8px;
+            font-size: 12px;
+            color: #fff;
+            }
+
+.btn.m-btn--pill.m-btn--air {
+
+    padding: 6px 18px !important;
+
+}
+</style>
+		<!-- {{m.custom_header|default_if_none:""}} -->
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124058811-1"></script>
+		<script async>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-124058811-1');
+		</script>
+
+<style>
+    .demo{ background: #ffded7; }
+a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.nav-tabs{
+    padding-left: 15px;
+    border-bottom: 4px solid #eeeeee;
+}
+.nav-tabs li a{
+    color: #fff;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background: #eeeeee;
+    text-shadow: 1px 1px 2px #000;
+    border: none;
+    border-radius: 0;
+    opacity: 0.5;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.nav-tabs li a:hover{
+    background: #eeeeee;
+    opacity: 0.8;
+}
+.nav-tabs li.active a{
+    opacity: 1;
+}
+.nav-tabs li.active a,
+.nav-tabs li.active a:hover,
+.nav-tabs li.active a:focus{
+    color: #fff;
+    background: #eeeeee;
+    border: none;
+    border-radius: 0;
+}
+.nav-tabs li a:before,
+.nav-tabs li a:after{
+    content: "";
+    border-top: 42px solid transparent;
+    position: absolute;
+    top: -2px;
+}
+.nav-tabs li a:before{
+    border-right: 15px solid #eeeeee;
+    left: -15px;
+}
+.nav-tabs li a:after{
+    border-left: 15px solid #eeeeee;
+    right: -15px;
+}
+.nav-tabs li a i,
+.nav-tabs li.active a i{
+    display: inline-block;
+    padding-right: 5px;
+    font-size: 15px;
+    text-shadow: none;
+}
+.nav-tabs li a span{
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: -9px;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.nav-tabs li a:hover span,
+.nav-tabs li.active a span{
+    letter-spacing: 1px;
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+}
+.tab-content{
+    padding: 30px;
+    background: #fff;
+    font-size: 16px;
+    color: #6c6c6c;
+    line-height: 25px;
+}
+.tab-content h3{
+    font-size: 24px;
+    margin-top: 0;
+}
+@media only screen and (max-width: 479px){
+    .nav-tabs li{
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    .nav-tabs li a span{
+        letter-spacing: 1px;
+        opacity: 1;
+    }
+}
+
+.nav-link {
+
+    background: #ececec !important;
+    text-shadow: none !important;
+    color: #000 !important;
+    padding-bottom: 8px !important;
+    font-size: 12px!important;
+    font-family: Arial;
+    font-weight: bold !important;
+
+}
+    .nav-tabs .nav-link {
+
+         border: 1px solid transparent;
+         border-top-left-radius: initial!important;
+         border-top-right-radius: initial!important;;
+
+}
+    .tab-content{
+        padding: 0px;
+    }
+
+    .nav.nav-pills .nav-item, .nav.nav-tabs .nav-item {
+
+         margin-left: 0px!important;
+
+}
+.m-tabs-line .m-tabs__item {
+        margin-right: 13px!important;
+        margin-bottom: -1px!important;
+}
+</style>
+</head>
+<!-- end::Head -->
+
+
+<!-- begin::Body -->
+<body  class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-light m-aside-left--fixed m-aside-left--offcanvas m-aside-left--minimize m-brand--minimize m-footer--push m-aside--offcanvas-default"  >
+	<ul class="m-nav-sticky nav-stick-side" style="margin-top: 30px;">
+		{% if m.firstline.apps.videos %}
+		<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="" data-placement="left" data-original-title="Videos">
+			<a href="#" id="videobtn2"><i class="fa fa-youtube-play m--font-danger"></i></a>
+		</li>
+		{% endif %}
+		{% if m.firstline.apps.news %}
+		<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="" data-placement="left" data-original-title="News">
+			<a href="#" id="newsbtn2"><i class="fa fa-newspaper-o m--font-warning"></i></a>
+		</li>
+		{% endif %}
+		{% if m.firstline.apps.wiki %}
+		<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="" data-placement="left" data-original-title="Wiki">
+			<a href="#" id="wikibtn2"><i class="fa fa-wikipedia-w m--font-success"></i></a>
+		</li>
+		{% endif %}
+		{% if m.firstline.apps.images %}
+		<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="" data-placement="left" data-original-title="Images">
+			<a href="#" id="imagebtn2"><i class="fa fa-image m--font-accent"></i></a>
+		</li>
+		{% endif %}
+		{% if m.firstline.apps.twitter %}
+		<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="" data-placement="left" data-original-title="Twitter">
+			<a href="#" id="twitterbtn2"><i class="fa fa-twitter m--font-info"></i></a>
+		</li>
+		{% endif %}
+	</ul>
+	<!-- begin:: Page -->
+	<div class="m-grid m-grid--hor m-grid--root m-page">
+
+
+		<!-- BEGIN: Header -->
+		<header id="m_header" class="m-grid__item m-header"  m-minimize-offset="200" m-minimize-mobile-offset="200" >
+			<div class="m-container m-container--fluid m-container--full-height">
+				<div class="m-stack m-stack--ver m-stack--desktop">
+					<!-- BEGIN: Brand -->
+					<div class="m-stack__item m-brand  m-brand--skin-light ">
+						<div class="m-stack m-stack--ver m-stack--general">
+							<div class="m-stack__item m-stack__item--middle m-brand__logo">
+								<a href="https://wuchna.com" class="m-brand__logo-wrapper">
+									<img alt="Wuchna" src="https://mirrors.wuchna.com/wuchnamirror/wuchna.png"/>
+								</a>
+								<h3 class="m-header__title"></h3>
+							</div>
+							<div class="m-stack__item m-stack__item--middle m-brand__tools">
+
+								<!-- BEGIN: Responsive Aside Left Menu Toggler -->
+								<a href="javascript:;" id="m_aside_left_offcanvas_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-tablet-and-mobile-inline-block">
+									<span></span>
+								</a>
+								<!-- END -->
+
+								<!-- BEGIN: Topbar Toggler -->
+								<a id="m_aside_header_topbar_mobile_toggle" href="javascript:;" class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
+									<i class="fa fa-plus-circle"></i>
+								</a>
+								<!-- BEGIN: Topbar Toggler -->
+							</div>
+						</div>
+					</div>
+					<!-- END: Brand -->
+					<div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
+						<div class="m-header__title">
+							<h1 class="m-header__title-text">{{m.page_meta.full_title}}</h1>
+						</div>
+						<!-- BEGIN: Horizontal Menu -->
+						<button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-light " id="m_aside_header_menu_mobile_close_btn"><i class="fa fa-close"></i></button>
+
+						<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light "  >
+							<ul class="m-menu__nav  m-menu__nav--submenu-arrow">
+								{% for cat in m.firstline.categories %}
+									<li class="m-menu__item m-menu__item--rel">
+										<button type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-{{colorsarray|random}}">{{cat}}</button>
+									</li>
+								{% endfor %}
+								{% if m.firstline.apps.videos %}
+									<li class="m-menu__item m-menu__item--rel">
+										<a href="#" id="videostopbtn" class="btn btn-danger m-btn btn-sm m-btn m-btn--icon">
+											<span>
+												<i class="fa fa-youtube-play"></i>
+												<span>Videos</span>
+											</span>
+										</a>
+									</li>
+								{% endif %}
+								{% if m.firstline.apps.news %}
+								<li class="m-menu__item m-menu__item--rel">
+										<a href="#" id="newstopbtn" class="btn btn-warning btn-sm m-btn m-btn m-btn--icon">
+											<span>
+												<i class="fa fa-newspaper-o"></i>
+												<span>News</span>
+											</span>
+										</a>
+									</li>
+								{% endif %}
+										{% if m.firstline.apps.wiki %}
+										<li class="m-menu__item m-menu__item--rel">
+										<a href="#" id="wikitopbtn" class="btn btn-success btn-sm m-btn m-btn m-btn--icon">
+											<span>
+												<i class="fa fa-wikipedia-w"></i>
+												<span>Wiki</span>
+											</span>
+										</a>
+									</li>
+										{% endif %}
+										{% if m.firstline.apps.images %}
+										<li class="m-menu__item m-menu__item--rel">
+										<a href="#" id="imagestopbtn" class="btn btn-accent btn-sm m-btn m-btn--icon">
+											<span>
+												<i class="fa fa-image"></i>
+												<span>Images</span>
+											</span>
+										</a>
+									</li>
+										{% endif %}
+										{% if m.firstline.apps.twitter %}
+										<li class="m-menu__item m-menu__item--rel">
+										<a href="#" id="twittertopbtn" class="btn btn-info btn-sm m-btn m-btn--icon">
+											<span>
+												<i class="fa fa-twitter"></i>
+												<span>Twitter</span>
+											</span>
+										</a>
+									</li>
+										{% endif %}
+                            </ul>
+
+						</div>
+						<!-- END: Horizontal Menu -->
+						<!-- BEGIN: Topbar -->
+						<div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+
+							<div class="m-stack__item m-stack__item--middle m-dropdown m-dropdown--arrow m-dropdown--large m-dropdown--mobile-full-width m-dropdown--align-right m-dropdown--skin-light m-header-search m-header-search--expandable m-header-search--skin-light" id="m_quicksearch" m-quicksearch-mode="default">
+	<!--BEGIN: Search Form -->
+	<form class="m-header-search__form">
+		<div class="m-header-search__wrapper">
+			<span class="m-header-search__icon-search" id="m_quicksearch_search">
+				<i class="fa fa-search"></i>
+			</span>
+			<span class="m-header-search__input-wrapper">
+				<input autocomplete="off" type="text" name="q" class="m-header-search__input" value="" placeholder="Search..." id="m_quicksearch_input">
+			</span>
+			<span class="m-header-search__icon-close" id="m_quicksearch_close">
+				<i class="la la-remove"></i>
+			</span>
+			<span class="m-header-search__icon-cancel" id="m_quicksearch_cancel">
+				<i class="la la-remove"></i>
+			</span>
+		</div>
+	</form>
+								<!--END: Search Form -->
+								<!--BEGIN: Search Results -->
+								<div class="m-dropdown__wrapper">
+									<div class="m-dropdown__arrow m-dropdown__arrow--center"></div>
+									<div class="m-dropdown__inner">
+										<div class="m-dropdown__body">
+											<div class="m-dropdown__scrollable m-scrollable" data-scrollable="true"  data-height="300" data-mobile-height="200">
+												<div class="m-dropdown__content m-list-search m-list-search--skin-light">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--BEGIN: END Results -->
+							</div>
+
+						</div>
+						<!-- END: Topbar -->			</div>
+					</div>
+				</div>
+			</header>
+			<!-- END: Header -->
+			<!-- begin::Body -->
+			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+				<!-- BEGIN: Left Aside -->
+				<button class="m-aside-left-close  m-aside-left-close--skin-light " id="m_aside_left_close_btn"><i class="fa fa-close"></i></button>
+
+				<div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-light ">
+				</div>
+				<!-- END: Left Aside -->
+					<div class="m-grid__item m-grid__item--fluid m-wrapper">
+
+						<!-- BEGIN: Subheader -->
+
+						<!-- END: Subheader -->
+						<div class="m-content">
+
+							{% for witem in m.section2 %}{{witem.wcontent | safe | default_if_none:""}}{% endfor %}
+							{% for witem in m.section3 %}{{witem.wcontent | safe | default_if_none:""}}{% endfor %}
+                        <script type="text/javascript">
+  ( function() {
+    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"wuchna","width":728,"height":90,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+</script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+
+							{% for witem in m.section1 %}{{witem.wcontent | safe}}{% endfor %}
+							{% for witem in m.section4 %}{{witem.wcontent | safe}}{% endfor %}
+							{% for witem in m.section5 %}{{witem.wcontent | safe}}{% endfor %}
+							{% for witem in m.section6 %}{{witem.wcontent | safe}}{% endfor %}
+							{% for witem in m.section7 %}{{witem.wcontent | safe}}{% endfor %}
+							{% for witem in m.section8 %}{{witem.wcontent | safe}}{% endfor %}
+							{% for witem in m.section9 %}{{witem.wcontent | safe}}{% endfor %}
+                        <script type="text/javascript">
+  ( function() {
+    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"wuchna","width":728,"height":90,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+</script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+							{% for witem in m.relations %}{{witem.wcontent | safe | default_if_none:""}}{% endfor %}
+							{{m.page_references | safe | default_if_none:""}}
+						</div>  <!-- m-content ends here -->
+					</div> <!-- m-grid__item ends here -->
+				</div>
+				<!-- end:: Body -->
+
+
+				<!-- begin::Footer -->
+				<footer class="m-grid__item		m-footer ">
+					<div class="m-container m-container--fluid m-container--full-height m-page__container">
+						<div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+							<div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+								<span class="m-footer__copyright">
+									2018 &copy; <a href="http://wuchna.com" class="m-link">Wuchna</a>
+								</span>
+							</div>
+							<div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
+								<ul class="m-footer__nav m-nav m-nav--inline m--pull-right">
+									<li class="m-nav__item m-nav__item">
+										<a href="https://wuchna.com/about" class="m-nav__link" data-toggle="m-tooltip" title="About" data-placement="left">
+											<i class="m-nav__link-icon fa fa-info m--icon-font-size-lg3"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
+				<!-- end::Footer -->
+
+
+			</div>
+			<!-- end:: Page -->
+
+
+			<!-- begin::Scroll Top -->
+			<div id="m_scroll_top" class="m-scroll-top">
+				<i class="fa fa-arrow-up"></i>
+			</div>
+			<div class="modal fade" id="m_modal_1_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="videoWrapper">
+								<iframe style="width:100%" class="video_idss" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="modal fade" id="m_modal_1_21" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Narration</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="text-data" style="height: 200px; overflow: scroll !important;">
+
+								<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+
+
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="m_modal_1_22" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-body">
+								<div class="text-data-desc" style="height: 200px; overflow: scroll !important;">
+									<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+										<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+									</div>
+									<div class="ps__rail-y" style="top: 0px; right: 4px;">
+										<div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>												<!-- end::Scroll Top -->		    <!-- begin::Quick Nav -->
+				<!--begin::Base Scripts -->
+				<!-- <script async src="{% static "assets/vendors/base/vendors.bundle.js" %}" type="text/javascript"></script> -->
+				<script async src="https://mirrors.wuchna.com/wuchnamirror/vendors.bundle.js" type="text/javascript"></script>
+				<script async src="https://mirrors2.wuchna.com/homepics/scripts.bundle.js" type="text/javascript"></script>
+			 <script src="https://mirrors.wuchna.com/assets/jquery.cubeportfolio.js" type="text/javascript"></script>
+                <script src="https://mirrors.wuchna.com/assets/portfolio-3.min.js" type="text/javascript"></script>
+
+ <!-- 			<script async src="https://keenthemes.com/metronic/preview/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+				<script async src="https://keenthemes.com/metronic/preview/assets/demo/demo6/base/scripts.bundle.js" type="text/javascript"></script>
+ -->				<!-- <script async src="https://keenthemes.com/metronic/preview/assets/app/js/dashboard.js" type="text/javascript"></script> -->
+				<!-- <script async src="{% static "assets/demo/demo6/base/scripts.bundle.js" %}" type="text/javascript"></script> -->
+				<!--end::Base Scripts -->
+
+				<!-- <script>
+					var input = document.getElementById("my_quicksearch_input");
+					input.addEventListener("keyup", function(event) {
+						event.preventDefault();
+						if (event.keyCode === 13) {
+							window.location.href = 'https://wuchna.com/p/'+input.value;
+						}
+					});
+				</script> -->
+				{{m.custom_footer | safe | default_if_none:""}}
+
+				<!--begin::Page Snippets -->
+
+				<script>
+                    					!function(t,o,i,l){"use strict";t("#js-grid-full-width").cubeportfolio({filters:"#js-filters-full-width",loadMore:"#js-loadMore-full-width",loadMoreAction:"auto",layoutMode:"mosaic",sortToPreventGaps:!0,defaultFilter:"*",animationType:"fadeOutTop",gapHorizontal:0,gapVertical:0,gridAdjustment:"responsive",mediaQueries:[{width:1500,cols:5},{width:1100,cols:4},{width:800,cols:3},{width:480,cols:2},{width:320,cols:1}],caption:"zoom",displayType:"lazyLoading",displayTypeSpeed:100,lightboxDelegate:".cbp-lightbox",lightboxGallery:!0,lightboxTitleSrc:"data-title",lightboxCounter:'<div class="cbp-popup-lightbox-counter">{{current}} of {{total}}</div>'})}(jQuery,window,document);
+				</script>
+			<script  src="https://code.jquery.com/jquery-1.12.0.min.js" crossorigin="anonymous"></script>
+				<!--end::Page Snippets -->
+				<script>
+                    $(document).ready(function () {
+					$("#wikitopbtn").click(function(){scrollToBottom('section1')});
+					$("#videostopbtn").click(function(){scrollToBottom('section2')});
+					$("#newstopbtn").click(function(){scrollToBottom('section3')});
+					$("#imagestopbtn").click(function(){scrollToBottom('section4')});
+					$("#twittertopbtn").click(function(){scrollToBottom('section5')});
+					$("#wikibtn2").click(function(){scrollToBottom('section1')});
+					$("#videobtn2").click(function(){scrollToBottom('section2')});
+					$("#newsbtn2").click(function(){scrollToBottom('section3')});
+					$("#imagebtn2").click(function(){scrollToBottom('section4')});
+					$("#twitterbtn2").click(function(){scrollToBottom('section5')});
+					function scrollToBottom(id){
+						div_height = $("#"+id).height();
+						div_offset = $("#"+id).offset().top;
+						window_height = $(window).height();
+						$('html,body').animate({
+							scrollTop: div_offset-window_height+div_height
+						},'slow');
+					}
+
+					jQuery.fn.animateAuto = function(prop, speed, callback){
+						var elem, height, width;
+						return this.each(function(i, el){
+							el = jQuery(el), elem = el.clone().css({"height":"auto","width":"auto"}).appendTo("body");
+							height = elem.css("height"),
+							width = elem.css("width"),
+							elem.remove();
+
+							if(prop === "height")
+								el.animate({"height":height}, speed, callback);
+							else if(prop === "width")
+								el.animate({"width":width}, speed, callback);
+							else if(prop === "both")
+								el.animate({"width":width,"height":height}, speed, callback);
+						});
+					}
+					var clicks=0;
+					$("#readmore").click(function(){
+						if(clicks==0){
+							clicks=1;
+							$(this).text("Read Less");
+							$("#content").css("height", "auto");
+						}
+						else{
+							clicks=0;
+							$(this).text("Read More");
+							$("#content").css("height","400px");
+
+						}
+					});
+
+                    });
+				</script>
+				<script>
+                    $(document).ready(function () {
+					$(".hover-effect").click(function(event) {
+						var captions="https://www.youtube.com/embed/"+$(this).data("videoid");
+						$(".video_idss").attr("src",captions);
+					});
+
+					$(".btn-video-play").click(function(event) {
+						var captions="https://www.youtube.com/embed/"+$(this).data("videoid");
+						$(".video_idss").attr("src",captions);
+					});
+
+					$(".caption-btn").click(function(event) {
+						$(".text-data").html($(this).data('narration'));
+					});
+					$(".description-btn").click(function(event) {
+						$(".text-data-desc").html($(this).data('description'));
+					});
+
+                    });
+				</script>
+				{% if m.firstline.apps.twitter %}
+				<script async>
+					$(document).ready(function(){
+						var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+						po.src = 'https://platform.twitter.com/widgets.js';
+						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					});
+				</script>
+				{% endif %}
+				<script src="https://mirrors.wuchna.com/wuchnamirror/lazy.js" type="text/javascript" charset="utf-8"></script>
+<script>
+     $(document).ready(function () {
+						$('.lazy').lazy();
+     });
+</script>
+			</body>
+			<!-- end::Body -->
+			</html>

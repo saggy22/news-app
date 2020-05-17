@@ -1,0 +1,205 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+    <form action="." method="post" class="m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed">
+        {% csrf_token %}
+        <div class="form-group m-form__group">
+            <label for="exampleTextarea">custom_footer</label>
+            <textarea class="form-control m-input" id="custom_footer" name="custom_footer"
+                      rows="5">{{ obj.custom_footer }}</textarea>
+        </div>
+
+        <div class="form-group m-form__group">
+            <label for="exampleTextarea">custom_header</label>
+            <textarea class="form-control m-input" id="custom_header" name="custom_header"
+                      rows="5">{{ obj.custom_header }}</textarea>
+        </div>
+
+        <div class="form-group m-form__group">
+            <label for="exampleTextarea">firstline</label>
+            <textarea class="form-control m-input" id="firstline_obj_type"
+                      name="firstline_obj_type" rows="5">{{ obj.firstline.obj_type|safe }}</textarea>
+            <br/><br/>
+            <textarea class="form-control m-input" id="firstline_categories"
+                      name="firstline_categories" rows="5">{{ obj.firstline.categories|safe }}</textarea>
+            <br/><br/>
+            <textarea class="form-control m-input" id="firstline_apps"
+                          name="firstline_apps" rows="5">{{ obj.firstline.apps|safe }}</textarea>
+                <br/><br/>
+        </div>
+
+        <div class="form-group m-form__group">
+            <label for="exampleTextarea">page_meta</label>
+            <textarea class="form-control m-input" id="page_meta_meta_title"
+                      name="page_meta_meta_title" rows="5">{{ obj.page_meta.meta_title|safe }}</textarea>
+            <br/><br/>
+            <textarea class="form-control m-input" id="page_meta_full_title"
+                          name="page_meta_full_title" rows="5">{{ obj.page_meta.full_title|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="page_meta_meta_dscr"
+                          name="page_meta_meta_dscr" rows="5">{{ obj.page_meta.meta_dscr|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="page_meta_meta_keywords"
+                          name="page_meta_meta_keywords" rows="5">{{ obj.page_meta.meta_keywords|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="page_meta_other_languages"
+                          name="page_meta_other_languages" rows="5">{{ obj.page_meta.other_languages|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="page_meta_other_html"
+                          name="page_meta_other_html" rows="5">{{ obj.page_meta.other_html|safe }}</textarea>
+        </div>
+
+        <div class="form-group m-form__group">
+            <label for="exampleTextarea">page_references</label>
+            <textarea class="form-control m-input" id="page_references" name="page_references"
+                      rows="5">{{ obj.page_references }}</textarea>
+        </div>
+
+
+        {% for subsection in  obj.section1 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section1--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section1_content_{{ forloop.counter }}"
+                          name="section1_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section1_context_{{ forloop.counter }}"
+                          name="section1_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+    {% for subsection in  obj.section2 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section2--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section2_content_{{ forloop.counter }}"
+                          name="section2_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section2_context_{{ forloop.counter }}"
+                          name="section2_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+        {% for subsection in  obj.section3 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section3--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section3_content_{{ forloop.counter }}"
+                          name="section3_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section3_context_{{ forloop.counter }}"
+                          name="section3_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+        {% for subsection in  obj.section4 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section4--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section4_content_{{ forloop.counter }}"
+                          name="section4_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section4_context_{{ forloop.counter }}"
+                          name="section4_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+       {% for subsection in  obj.section5 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section5--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section5_content_{{ forloop.counter }}"
+                          name="section5_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section5_context_{{ forloop.counter }}"
+                          name="section5_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+           {% for subsection in  obj.section6 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section6--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section6_content_{{ forloop.counter }}"
+                          name="section6_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section6_context_{{ forloop.counter }}"
+                          name="section6_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+       {% for subsection in  obj.section7 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section7--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section7_content_{{ forloop.counter }}"
+                          name="section7_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section7_context_{{ forloop.counter }}"
+                          name="section7_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+       {% for subsection in  obj.section8 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section6--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section8_content_{{ forloop.counter }}"
+                          name="section8_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section8_context_{{ forloop.counter }}"
+                          name="section8_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+       {% for subsection in  obj.section9 %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">section6--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="section9_content_{{ forloop.counter }}"
+                          name="section9_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="section9_context_{{ forloop.counter }}"
+                          name="section9_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+          {% for subsection in  obj.images %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">Images--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="images_content_{{ forloop.counter }}"
+                          name="images_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="images_context_{{ forloop.counter }}"
+                          name="images_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+        {% for subsection in  obj.videos %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">Videos--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="videos_content_{{ forloop.counter }}"
+                          name="videos_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="videos_context_{{ forloop.counter }}"
+                          name="videos_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+        {% for subsection in  obj.relations %}
+            <div class="form-group m-form__group">
+                <label for="exampleTextarea">Relations--{{ forloop.counter }}</label>
+                <textarea class="form-control m-input" id="relations_content_{{ forloop.counter }}"
+                          name="relations_content_{{ forloop.counter }}" rows="5">{{ subsection.wcontent|safe }}</textarea>
+                <br/><br/>
+            <textarea class="form-control m-input" id="relations_context_{{ forloop.counter }}"
+                          name="relations_context_{{ forloop.counter }}" rows="5">{{ subsection.wcontext|safe }}</textarea>
+            </div>
+        {% endfor %}
+
+
+        <div class="m-portlet__foot m-portlet__no-border m-portlet__foot--fit">
+            <div class="m-form__actions m-form__actions--solid">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-6">
+                        <button type="submit" class="btn btn-brand">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
