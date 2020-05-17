@@ -23,7 +23,7 @@ django-redis==4.9.0
 django-tagging==0.4.6
 django-timezone-field==3.0rc1
 django-versatileimagefield==1.9
-djangorestframework==3.8.2
+djangorestframework==3.9.1
 feedparser==5.2.1
 gunicorn==19.9.0
 idna==2.7
