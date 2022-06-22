@@ -37,7 +37,7 @@ lxml==4.2.5
 Markdown==3.0.1
 matplotlib==3.0.0
 mistune==0.8.4
-numpy==1.15.2
+numpy==1.22.0
 oauthlib==2.1.0
 parso==0.3.1
 pexpect==4.6.0
